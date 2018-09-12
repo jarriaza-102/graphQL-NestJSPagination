@@ -1,0 +1,19 @@
+{
+  "name": "graphql-nestjs-pagination",
+  "version": "1.0.0",
+  "description": "Pagination to work with GraphQL & NestJS",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jarriaza-102/graphQL-NestJSPagination.git"
+  },
+  "author": "Joseph Arriaza",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/pluralize": "0.0.29",
+    "typescript": "^3.0.3"
+  }
+}

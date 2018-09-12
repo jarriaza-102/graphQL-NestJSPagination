@@ -1,0 +1,8 @@
+type Pagination {
+    pageIndex: Int
+    pageSize: Int
+    totalPages: Int
+    totalElements: Int
+    hasNextPage: Boolean
+    hasPrevPage: Boolean
+}
