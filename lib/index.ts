@@ -11,8 +11,9 @@ export class PaginationParser {
                     toBeReplaced += typeDefs[i];
                 }
             }
-            typeDefsWithPaging = typeDefsWithPaging.replace(toBeReplaced, toBeReplaced.replace(' ' + paginationType.objectType, ' ' + paginationType.objectType + 'Pager'));
+            typeDefsWithPaging = typeDefsWithPaging.replace(toBeReplaced, toBeReplaced.replace(' [' + paginationType.objectType + ']', ' ' + paginationType.objectType + 'Pager'));
             typeDefsWithPaging += '\ntype '+ paginationType.objectType +'Pager {\n  data: ['+ paginationType.objectType +']\n  pagination: Pagination\n}\n';
+            typeDefsWithPaging = typeDefsWithPaging.replace(paginationType.functionName, paginationType.functionName + '(pageIndex: Int, pageSize: Int)');
 
         });
 

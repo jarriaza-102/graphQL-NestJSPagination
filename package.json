@@ -13,7 +13,6 @@
   "author": "Joseph Arriaza",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@types/pluralize": "0.0.29",
     "typescript": "^3.0.3"
   }
 }
