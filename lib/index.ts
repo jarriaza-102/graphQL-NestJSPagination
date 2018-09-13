@@ -10,6 +10,7 @@ export class PaginationParser {
                 if (typeDefs[i] == '\n') {
                     break;
                 } else {
+                    //
                     if (typeDefs[i] == '(' ) {
                         isParentesisOpened = true;
                     } else if (typeDefs[i] == ')')  {
@@ -23,7 +24,10 @@ export class PaginationParser {
             }
             typeDefsWithPaging = typeDefsWithPaging.replace(toBeReplaced, toBeReplaced.replace(' [' + paginationType.objectType + ']', ' ' + paginationType.objectType + 'Pager'));
             typeDefsWithPaging += '\ntype '+ paginationType.objectType +'Pager {\n  data: ['+ paginationType.objectType +']\n  pagination: Pagination\n}\n';
-            typeDefsWithPaging = typeDefsWithPaging.replace(paginationType.functionName, paginationType.functionName + '(pageIndex: Int, pageSize: Int ' + params + ')');
+            typeDefsWithPaging = typeDefsWithPaging.replace(paginationType.functionName, paginationType.functionName + '(pageIndex: Int, pageSize: Int' + params + ')');
+            if (params.trim() != ',') {
+                typeDefsWithPaging = typeDefsWithPaging.replace('(' + params.replace(', ', '') + ')', '');
+            }
         });
 
         return typeDefsWithPaging;
